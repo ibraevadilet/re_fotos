@@ -1,11 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:re_fotos/core/app_text_styles.dart';
+import 'package:re_fotos/logic/model/info_model.dart';
 import 'package:re_fotos/widgets/spaces.dart';
 import 'package:shimmer/shimmer.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({Key? key, required this.model}) : super(key: key);
+  final InfoModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class DetailScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: const BackButton(color: Colors.black),
         title: Text(
-          "How to edit photos",
+          'How to edit photos',
           style: AppTextStyles.s19W700(color: Colors.black),
         ),
       ),
@@ -24,9 +26,10 @@ class DetailScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 22),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CachedNetworkImage(
-                imageUrl: "https://autodmir.ru/logo/1/2312/photo.jpg",
+                imageUrl: model.image,
                 placeholder: (_, url) {
                   return SizedBox(
                     width: getWidth(context),
@@ -47,14 +50,13 @@ class DetailScreen extends StatelessWidget {
                     width: getWidth(context),
                     height: 500,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            "https://autodmir.ru/logo/1/2312/photo.jpg"),
+                      image: DecorationImage(
+                        image: NetworkImage(model.image),
                         fit: BoxFit.cover,
                       ),
                     ),
                     child: Text(
-                      "How to edit photos",
+                      model.title,
                       style: AppTextStyles.s19W700(color: Colors.white),
                     ),
                   );
@@ -62,7 +64,7 @@ class DetailScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Text(
-                "The Center for Artificial Intelligence and",
+                model.longDescription,
                 style: AppTextStyles.s15W400(color: Colors.black),
               )
             ],

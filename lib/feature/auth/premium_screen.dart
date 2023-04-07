@@ -96,9 +96,16 @@ class PremiumScreen extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 16),
-        Text(
-          "No thanks",
-          style: AppTextStyles.s15W400(color: AppColors.color029EF1Blue2),
+        InkWell(
+          onTap: () {
+            if (isPop) {
+              Navigator.pop(context);
+            }
+          },
+          child: Text(
+            "No thanks",
+            style: AppTextStyles.s15W400(color: AppColors.color029EF1Blue2),
+          ),
         ),
         const Spacer(),
       ],

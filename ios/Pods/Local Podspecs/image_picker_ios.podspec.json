@@ -24,9 +24,10 @@
     ]
   },
   "platforms": {
-    "ios": "11.0"
+    "ios": "9.0"
   },
   "pod_target_xcconfig": {
-    "DEFINES_MODULE": "YES"
+    "DEFINES_MODULE": "YES",
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386"
   }
 }

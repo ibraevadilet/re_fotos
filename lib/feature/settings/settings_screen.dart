@@ -3,8 +3,8 @@ import 'package:re_fotos/config/app_config.dart';
 import 'package:re_fotos/config/check_premium.dart';
 import 'package:re_fotos/core/app_images.dart';
 import 'package:re_fotos/core/app_text_styles.dart';
+import 'package:re_fotos/feature/auth/premium_screen.dart';
 import 'package:re_fotos/web_view_screen.dart';
-import 'package:re_fotos/widgets/buttom_navigator.dart';
 import 'package:re_fotos/widgets/custom_button.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -69,11 +69,11 @@ class SettingsScreen extends StatelessWidget {
                 text: "Support",
               ),
               const SizedBox(height: 16),
-              CustomButton(
+              const CustomButton(
                 text: "Rate our app",
               ),
               const SizedBox(height: 16),
-              CustomButton(
+              const CustomButton(
                 text: "Restore",
               ),
               const SizedBox(height: 16),
@@ -90,13 +90,12 @@ class SettingsScreen extends StatelessWidget {
                     isGradient: true,
                     text: 'Buy Premium for \$0.99',
                     onPressed: () async {
-                      await CheckPremium.setSubscription();
-                      Navigator.pushAndRemoveUntil(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const BottomNavigatorScreen(),
+                          builder: (context) =>
+                              const PremiumScreen(isPop: true),
                         ),
-                        (protected) => false,
                       );
                     },
                   );

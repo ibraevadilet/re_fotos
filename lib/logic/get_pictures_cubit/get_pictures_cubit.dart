@@ -1,6 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:re_fotos/core/local_db.dart';
 import 'package:re_fotos/logic/model/image_model.dart';
 
 part 'get_pictures_cubit.freezed.dart';
@@ -11,8 +12,9 @@ class GetPicturesCubit extends Cubit<GetPicturesState> {
   Future<void> getPictures() async {
     emit(const GetPicturesState.loading());
     try {
+      final uid = await SavedData.getUserId();
       final pictures = await getPicturesFromServer();
-      pictures.shuffle();
+      pictures.removeWhere((e) => e.uid != uid);
       emit(GetPicturesState.success(pictures));
     } catch (e) {
       emit(GetPicturesState.failed(e.toString()));
@@ -21,7 +23,7 @@ class GetPicturesCubit extends Cubit<GetPicturesState> {
 
   Future<List<ImageModel>> getPicturesFromServer() async {
     final snapshot =
-        await FirebaseDatabase.instance.ref('retouch_lifehacks').get();
+        await FirebaseDatabase.instance.ref('images').get();
 
     final lessonsFromServer = <ImageModel>[];
     if (snapshot.value != null) {
