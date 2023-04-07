@@ -7,7 +7,9 @@ import 'package:re_fotos/logic/model/image_model.dart';
 part 'get_pictures_cubit.freezed.dart';
 
 class GetPicturesCubit extends Cubit<GetPicturesState> {
-  GetPicturesCubit() : super(const GetPicturesState.initial());
+  GetPicturesCubit() : super(const GetPicturesState.initial()) {
+    getPictures();
+  }
 
   Future<void> getPictures() async {
     emit(const GetPicturesState.loading());
@@ -22,8 +24,7 @@ class GetPicturesCubit extends Cubit<GetPicturesState> {
   }
 
   Future<List<ImageModel>> getPicturesFromServer() async {
-    final snapshot =
-        await FirebaseDatabase.instance.ref('images').get();
+    final snapshot = await FirebaseDatabase.instance.ref('images').get();
 
     final lessonsFromServer = <ImageModel>[];
     if (snapshot.value != null) {

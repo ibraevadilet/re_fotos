@@ -54,6 +54,12 @@
 @import gallery_saver;
 #endif
 
+#if __has_include(<image_downloader/ImageDownloaderPlugin.h>)
+#import <image_downloader/ImageDownloaderPlugin.h>
+#else
+@import image_downloader;
+#endif
+
 #if __has_include(<image_editor_common/ImageEditorPlugin.h>)
 #import <image_editor_common/ImageEditorPlugin.h>
 #else
@@ -125,6 +131,7 @@
   [ImageCompressPlugin registerWithRegistrar:[registry registrarForPlugin:@"ImageCompressPlugin"]];
   [FlutterLocalNotificationsPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterLocalNotificationsPlugin"]];
   [GallerySaverPlugin registerWithRegistrar:[registry registrarForPlugin:@"GallerySaverPlugin"]];
+  [ImageDownloaderPlugin registerWithRegistrar:[registry registrarForPlugin:@"ImageDownloaderPlugin"]];
   [ImageEditorPlugin registerWithRegistrar:[registry registrarForPlugin:@"ImageEditorPlugin"]];
   [ImageGallerySaverPlugin registerWithRegistrar:[registry registrarForPlugin:@"ImageGallerySaverPlugin"]];
   [FLTImagePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTImagePickerPlugin"]];

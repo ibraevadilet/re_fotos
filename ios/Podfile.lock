@@ -97,6 +97,8 @@ PODS:
   - GoogleUtilities/UserDefaults (7.11.1):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (3.1.0)
+  - image_downloader (0.0.1):
+    - Flutter
   - image_editor_common (1.0.0):
     - Flutter
   - image_gallery_saver (1.5.0):
@@ -156,6 +158,7 @@ DEPENDENCIES:
   - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - gallery_saver (from `.symlinks/plugins/gallery_saver/ios`)
+  - image_downloader (from `.symlinks/plugins/image_downloader/ios`)
   - image_editor_common (from `.symlinks/plugins/image_editor_common/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
@@ -211,6 +214,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_local_notifications/ios"
   gallery_saver:
     :path: ".symlinks/plugins/gallery_saver/ios"
+  image_downloader:
+    :path: ".symlinks/plugins/image_downloader/ios"
   image_editor_common:
     :path: ".symlinks/plugins/image_editor_common/ios"
   image_gallery_saver:
@@ -257,6 +262,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 8378d1fa8ac49753ea6ce70d65a7cb70ce5f66e6
   GoogleUtilities: 9aa0ad5a7bc171f8bae016300bfcfa3fb8425749
   GTMSessionFetcher: c9e714f7eec91a55641e2bab9f45fd83a219b882
+  image_downloader: 73e190d6c9f286f2649554051348d9cb319cd4b3
   image_editor_common: d6f6644ae4a6de80481e89fe6d0a8c49e30b4b43
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
   image_picker_ios: 58b9c4269cb176f89acea5e5d043c9358f2d25f8

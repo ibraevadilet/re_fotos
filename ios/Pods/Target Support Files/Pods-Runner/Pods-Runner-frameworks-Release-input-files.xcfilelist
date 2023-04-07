@@ -21,6 +21,7 @@ ${BUILT_PRODUCTS_DIR}/apphud/apphud.framework
 ${BUILT_PRODUCTS_DIR}/flutter_image_compress/flutter_image_compress.framework
 ${BUILT_PRODUCTS_DIR}/flutter_local_notifications/flutter_local_notifications.framework
 ${BUILT_PRODUCTS_DIR}/gallery_saver/gallery_saver.framework
+${BUILT_PRODUCTS_DIR}/image_downloader/image_downloader.framework
 ${BUILT_PRODUCTS_DIR}/image_editor_common/image_editor_common.framework
 ${BUILT_PRODUCTS_DIR}/image_gallery_saver/image_gallery_saver.framework
 ${BUILT_PRODUCTS_DIR}/image_picker_ios/image_picker_ios.framework
