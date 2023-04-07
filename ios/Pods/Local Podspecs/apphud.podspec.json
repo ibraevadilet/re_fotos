@@ -1,0 +1,34 @@
+{
+  "name": "apphud",
+  "version": "2.2.14",
+  "summary": "A new flutter plugin project.",
+  "description": "A new flutter plugin project.",
+  "homepage": "http://example.com",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Your Company": "email@example.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "ApphudSDK": [
+      "2.8.8"
+    ]
+  },
+  "platforms": {
+    "ios": "11.2"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

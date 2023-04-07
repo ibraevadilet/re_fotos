@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>9599165875-q377199j93vssl4ukb53jaoun1abkcaa.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.9599165875-q377199j93vssl4ukb53jaoun1abkcaa</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCrfbHG223e7q9XftDSMYMqSDGiSaYKJnY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>9599165875</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.reFotos</string>
+	<key>PROJECT_ID</key>
+	<string>refotos-8f272</string>
+	<key>STORAGE_BUCKET</key>
+	<string>refotos-8f272.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:9599165875:ios:c8055a0d008870cf3d97c6</string>
+</dict>
+</plist>
