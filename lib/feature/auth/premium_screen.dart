@@ -17,13 +17,43 @@ class PremiumScreen extends StatelessWidget {
     return Scaffold(
         body: Column(
       children: [
-        Image.asset(
-          AppImages.premiumImage,
+        Stack(
+          children: [
+            Image.asset(
+              AppImages.premiumImage,
+            ),
+            Positioned(
+              right: 20,
+              top: 60,
+              child: IconButton(
+                onPressed: () {
+                  if (isPop) {
+                    Navigator.pop(context);
+                  } else {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomNavigatorScreen(),
+                      ),
+                      (protected) => false,
+                    );
+                  }
+                },
+                icon: const Icon(
+                  Icons.close,
+                  color: Colors.white,
+                  size: 35,
+                ),
+              ),
+            )
+          ],
         ),
         const Spacer(),
-        Image.asset(
-          AppImages.autoEditing,
-          width: 144,
+        Text(
+          '• Edit more then 3 photos',
+          style: AppTextStyles.s22W700(
+            color: AppColors.color029EF1Blue2,
+          ),
         ),
         const SizedBox(height: 16),
         Image.asset(

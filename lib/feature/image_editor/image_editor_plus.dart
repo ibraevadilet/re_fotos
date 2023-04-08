@@ -203,10 +203,6 @@ class _SingleImageEditorState extends State<SingleImageEditor> {
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   icon: const Icon(Icons.save_alt),
                   onPressed: () async {
-                    resetTransformation();
-
-                    var binaryIntList = await screenshotController.capture(
-                        pixelRatio: pixelRatio);
                     final uid = await SavedData.getUserId();
                     if (uid.isEmpty) {
                       await SavedData.setUserId();

@@ -22,7 +22,6 @@ class _WidgetPhotoContainerState extends State<WidgetPhotoContainer> {
       alignment: AlignmentDirectional.topCenter,
       children: [
         Container(
-          width: 120,
           height: 172,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
@@ -31,7 +30,6 @@ class _WidgetPhotoContainerState extends State<WidgetPhotoContainer> {
             imageUrl: widget.model.image,
             placeholder: (_, url) {
               return SizedBox(
-                width: 120,
                 height: 172,
                 child: Shimmer.fromColors(
                   baseColor: Colors.grey.withOpacity(0.4),
@@ -48,7 +46,6 @@ class _WidgetPhotoContainerState extends State<WidgetPhotoContainer> {
             imageBuilder: (_, imageProvider) {
               return Container(
                 alignment: Alignment.topRight,
-                width: 120,
                 height: 172,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
