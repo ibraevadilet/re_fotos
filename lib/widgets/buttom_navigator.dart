@@ -18,6 +18,11 @@ class _BottomNavigatorState extends State<BottomNavigatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        toolbarHeight: 0,
+        elevation: 0,
+      ),
       backgroundColor: Colors.white,
       body: pages[index],
       bottomNavigationBar: Container(

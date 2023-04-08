@@ -14,6 +14,7 @@ class MyPhotosScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => GetPicturesCubit()..getPictures(),
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Column(
             children: [

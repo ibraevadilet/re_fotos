@@ -14,6 +14,7 @@ class MainScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => GetInfoCubit(),
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22),

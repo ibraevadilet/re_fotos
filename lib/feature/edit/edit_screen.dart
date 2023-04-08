@@ -21,6 +21,7 @@ class EditScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => GetPicturesCubit(),
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
