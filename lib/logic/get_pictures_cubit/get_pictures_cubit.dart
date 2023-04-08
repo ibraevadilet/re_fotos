@@ -7,19 +7,19 @@ import 'package:re_fotos/logic/model/image_model.dart';
 part 'get_pictures_cubit.freezed.dart';
 
 class GetPicturesCubit extends Cubit<GetPicturesState> {
-  GetPicturesCubit() : super(const GetPicturesState.initial()) {
-    getPictures();
-  }
+  GetPicturesCubit() : super(const GetPicturesState.initial());
 
-  Future<void> getPictures() async {
+  Future<List<ImageModel>> getPictures() async {
     emit(const GetPicturesState.loading());
     try {
       final uid = await SavedData.getUserId();
       final pictures = await getPicturesFromServer();
       pictures.removeWhere((e) => e.uid != uid);
       emit(GetPicturesState.success(pictures));
+      return pictures;
     } catch (e) {
       emit(GetPicturesState.failed(e.toString()));
+      return [];
     }
   }
 

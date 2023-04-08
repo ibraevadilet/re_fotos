@@ -50,6 +50,7 @@ class DetailScreen extends StatelessWidget {
                     width: getWidth(context),
                     height: 500,
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
                         image: NetworkImage(model.image),
                         fit: BoxFit.cover,

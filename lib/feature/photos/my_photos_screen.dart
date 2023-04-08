@@ -12,8 +12,9 @@ class MyPhotosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetPicturesCubit(),
+      create: (context) => GetPicturesCubit()..getPictures(),
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Column(
             children: [
@@ -22,6 +23,7 @@ class MyPhotosScreen extends StatelessWidget {
                 "My photos",
                 style: AppTextStyles.s19W700(color: Colors.black),
               ),
+              const SizedBox(height: 10),
               Expanded(
                 child: BlocBuilder<GetPicturesCubit, GetPicturesState>(
                   builder: (context, state) {
@@ -29,19 +31,22 @@ class MyPhotosScreen extends StatelessWidget {
                       initial: () => const AppIndicator(),
                       loading: () => const AppIndicator(),
                       failed: (error) => AppErrorText(error: error),
-                      success: (model) => GridView.builder(
-                        scrollDirection: Axis.vertical,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          mainAxisSpacing: 8,
-                          crossAxisSpacing: 0,
-                          mainAxisExtent: 172,
+                      success: (model) => Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: GridView.builder(
+                          scrollDirection: Axis.vertical,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 8,
+                            crossAxisSpacing: 20,
+                            mainAxisExtent: 172,
+                          ),
+                          itemBuilder: (context, index) => WidgetPhotoContainer(
+                            model: model[index],
+                          ),
+                          itemCount: model.length,
                         ),
-                        itemBuilder: (context, index) => WidgetPhotoContainer(
-                          model: model[index],
-                        ),
-                        itemCount: model.length,
                       ),
                     );
                   },

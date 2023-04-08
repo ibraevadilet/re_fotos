@@ -139,9 +139,10 @@ abstract class AppTextStyles {
         fontWeight: FontWeight.w600,
         color: color,
       );
-  static s22W700({Color? color}) => const TextStyle(
+  static s22W700({Color? color}) => TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w700,
+        color: color,
       );
   static s24W300({Color? color}) => TextStyle(
         fontSize: 24,
