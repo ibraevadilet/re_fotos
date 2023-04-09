@@ -67,7 +67,8 @@ class DetailScreen extends StatelessWidget {
               Text(
                 model.longDescription,
                 style: AppTextStyles.s15W400(color: Colors.black),
-              )
+              ),
+              const SizedBox(height: 30),
             ],
           ),
         ),
