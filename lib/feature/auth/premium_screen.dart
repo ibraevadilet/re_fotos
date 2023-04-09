@@ -1,3 +1,4 @@
+import 'package:apphud/apphud.dart';
 import 'package:flutter/material.dart';
 import 'package:re_fotos/config/app_config.dart';
 import 'package:re_fotos/config/check_premium.dart';
@@ -7,6 +8,7 @@ import 'package:re_fotos/core/app_text_styles.dart';
 import 'package:re_fotos/web_view_screen.dart';
 import 'package:re_fotos/widgets/buttom_navigator.dart';
 import 'package:re_fotos/widgets/custom_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PremiumScreen extends StatelessWidget {
   const PremiumScreen({super.key, this.isPop = false});
@@ -68,13 +70,26 @@ class PremiumScreen extends StatelessWidget {
             isGradient: true,
             text: 'Buy Premium for \$0.99',
             onPressed: () async {
-              await CheckPremium.setSubscription();
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const BottomNavigatorScreen(),
-                ),
-                (protected) => false,
+              var paywalls = await Apphud.paywalls();
+              await Apphud.purchase(
+                product: paywalls?.paywalls.first.products!.first,
+              ).whenComplete(
+                () async {
+                  if (await Apphud.hasActiveSubscription() ||
+                      await Apphud.hasPremiumAccess()) {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+
+                    prefs.setBool("ISBUY", true);
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomNavigatorScreen(),
+                      ),
+                      (route) => false,
+                    );
+                  }
+                },
               );
             },
           ),

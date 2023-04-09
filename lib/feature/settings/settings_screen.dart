@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:re_fotos/config/app_config.dart';
 import 'package:re_fotos/config/check_premium.dart';
+import 'package:re_fotos/config/check_restore.dart';
 import 'package:re_fotos/core/app_images.dart';
 import 'package:re_fotos/core/app_text_styles.dart';
 import 'package:re_fotos/feature/auth/premium_screen.dart';
@@ -70,11 +71,8 @@ class SettingsScreen extends StatelessWidget {
                 text: "Support",
               ),
               const SizedBox(height: 16),
-              const CustomButton(
-                text: "Rate our app",
-              ),
-              const SizedBox(height: 16),
-              const CustomButton(
+              CustomButton(
+                onPressed: () => CheckRestore.checkRestore(context),
                 text: "Restore",
               ),
               const SizedBox(height: 16),
