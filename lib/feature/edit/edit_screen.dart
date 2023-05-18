@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:re_fotos/config/check_premium.dart';
+import 'package:re_fotos/utils/check_premium.dart';
 import 'package:re_fotos/core/app_images.dart';
 import 'package:re_fotos/core/app_text_styles.dart';
 import 'package:re_fotos/feature/auth/premium_screen.dart';

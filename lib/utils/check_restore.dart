@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'app_config.dart';
+import '../main.dart';
+
 
 class CheckRestore {
   static void checkRestore(context) async {
@@ -35,7 +36,7 @@ class CheckRestore {
         builder: (BuildContext context) => CupertinoAlertDialog(
           title: const Text('Restore purchase'),
           content: const Text(
-              'Your purchase is not found.\nSupport: ${AppConfig.supportForm}'),
+              'Your purchase is not found.\nSupport: ${AppLinks.supportForm}'),
           actions: [
             CupertinoDialogAction(
               isDefaultAction: true,

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:re_fotos/config/app_config.dart';
-import 'package:re_fotos/config/check_premium.dart';
-import 'package:re_fotos/config/check_restore.dart';
+import 'package:re_fotos/utils/check_premium.dart';
+import 'package:re_fotos/utils/check_restore.dart';
 import 'package:re_fotos/core/app_images.dart';
 import 'package:re_fotos/core/app_text_styles.dart';
 import 'package:re_fotos/feature/auth/premium_screen.dart';
 import 'package:re_fotos/web_view_screen.dart';
 import 'package:re_fotos/widgets/custom_button.dart';
+
+import '../../main.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const WebViewScreen(
-                        url: AppConfig.privacyPolicy,
+                        url: AppLinks.privacyPolicy,
                         title: "Privacy Policy",
                       ),
                     ),
@@ -47,7 +48,7 @@ class SettingsScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const WebViewScreen(
-                        url: AppConfig.termOfUse,
+                        url: AppLinks.termOfUse,
                         title: "Terms of Use",
                       ),
                     ),
@@ -62,7 +63,7 @@ class SettingsScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const WebViewScreen(
-                        url: AppConfig.supportForm,
+                        url: AppLinks.supportForm,
                         title: "Support",
                       ),
                     ),

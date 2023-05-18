@@ -169,6 +169,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>in_app_review.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
 			<key>isShown</key>

@@ -1,7 +1,5 @@
 import 'package:apphud/apphud.dart';
 import 'package:flutter/material.dart';
-import 'package:re_fotos/config/app_config.dart';
-import 'package:re_fotos/config/check_premium.dart';
 import 'package:re_fotos/core/app_colors.dart';
 import 'package:re_fotos/core/app_images.dart';
 import 'package:re_fotos/core/app_text_styles.dart';
@@ -9,6 +7,8 @@ import 'package:re_fotos/web_view_screen.dart';
 import 'package:re_fotos/widgets/buttom_navigator.dart';
 import 'package:re_fotos/widgets/custom_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../main.dart';
 
 class PremiumScreen extends StatelessWidget {
   const PremiumScreen({super.key, this.isPop = false});
@@ -104,7 +104,7 @@ class PremiumScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const WebViewScreen(
-                      url: AppConfig.privacyPolicy,
+                      url: AppLinks.privacyPolicy,
                       title: "Privacy Policy",
                     ),
                   ),
@@ -127,7 +127,7 @@ class PremiumScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const WebViewScreen(
-                      url: AppConfig.termOfUse,
+                      url: AppLinks.termOfUse,
                       title: "Terms of Use",
                     ),
                   ),

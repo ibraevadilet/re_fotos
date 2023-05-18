@@ -21,22 +21,11 @@ class WebViewPage extends StatefulWidget {
 class _WebViewPageState extends State<WebViewPage> {
   WebViewController? _webController;
   late String webViewUrl;
-  // RateMyApp rateMyApp = RateMyApp(appStoreIdentifier: AppConfig.appStoreIdentifier);
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   void initState() {
     super.initState();
     webViewUrl = widget.url;
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // await rateMyApp.init();
-      await Future.delayed(const Duration(seconds: 5));
-      // rateMyApp.showRateDialog(context);
-    });
     if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
     _enableRotation();
   }
